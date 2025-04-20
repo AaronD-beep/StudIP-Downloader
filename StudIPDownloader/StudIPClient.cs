@@ -87,7 +87,7 @@ namespace StudIPDownloader
 
         public bool login()
         {
-            //wc.DownloadString(BASE); // Notwendige Cookies setzen (Seminar_Session)
+            //wc.DownloadString(BASE); // Notwendige Cookies setzen (Studip_Session)
             string auth = Convert.ToBase64String(Encoding.ASCII.GetBytes(this._user + ":" + this._password));
             
             //wc.Headers[HttpRequestHeader.Accept] = "*/*";

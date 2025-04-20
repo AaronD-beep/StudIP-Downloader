@@ -88,7 +88,7 @@ namespace StudIPDownloader
             }
             else if (arguments.Length == 2) //Cookie Login with Parameter
             {
-                client = new StudIPClient(getStudIP(), new Cookie("Seminar_Session", arguments[1], "/", new Uri(StudIpURL).Host), express, ignore, downloadOverwrite);
+                client = new StudIPClient(getStudIP(), new Cookie("Studip_Session", arguments[1], "/", new Uri(StudIpURL).Host), express, ignore, downloadOverwrite);
             }
             else if (arguments.Length >= 3) //User Pass Login
             {
@@ -155,9 +155,9 @@ namespace StudIPDownloader
         {
             if (SessionCookie == "" || forceNew)
             {
-                SessionCookie = ReadLine("Seminar_Session Cookie aus dem Browser: ");
+                SessionCookie = ReadLine("Studip_Session Cookie aus dem Browser: ");
             }
-            return new Cookie("Seminar_Session", SessionCookie, "/", new Uri(StudIpURL).Host);
+            return new Cookie("Studip_Session", SessionCookie, "/", new Uri(StudIpURL).Host);
         }
 
         static string getStudIP()
